@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+    mikko:
+        build: ./mikko
+        ports:
+            - "1337:22"
+        volumes:
+            - ../mikkotest:/var/www/html
