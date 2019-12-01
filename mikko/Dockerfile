@@ -8,6 +8,9 @@ MAINTAINER Christiaan Bye christiaanbye@gmail.com
 # unzip            Required to unzip files when running composer install
 RUN apt-get update && apt-get install -y libzip-dev openssh-server wget unzip
 
+# Install pcntl for unit test time limits
+RUN docker-php-ext-install pcntl
+
 # Install XDebug
 RUN pecl install xdebug
 COPY xdebug-config/ /usr/local/etc/php/conf.d
